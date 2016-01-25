@@ -87,7 +87,10 @@ LOCAL_SRC_FILES := \
     src/common/linux/guid_creator.cc \
     src/common/linux/linux_libc_support.cc \
     src/common/linux/memory_mapped_file.cc \
-    src/common/linux/safe_readlink.cc
+    src/common/linux/safe_readlink.cc \
+    src/client/linux/dump_writer_common/ucontext_reader.cc \
+    src/client/linux/dump_writer_common/thread_info.cc \
+    src/client/linux/microdump_writer/microdump_writer.cc
 
 LOCAL_C_INCLUDES        := $(LOCAL_PATH)/src/common/android/include \
                            $(LOCAL_PATH)/src

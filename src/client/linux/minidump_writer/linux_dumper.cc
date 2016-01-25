@@ -37,6 +37,7 @@
 
 #include "client/linux/minidump_writer/linux_dumper.h"
 
+#include <stdint.h>
 #include <assert.h>
 #include <elf.h>
 #include <fcntl.h>
@@ -434,7 +435,7 @@ void LinuxDumper::ParseLoadedElfProgramHeaders(ElfW(Ehdr)* ehdr,
                                                size_t* dyn_count_ptr) {
   uintptr_t phdr_addr = start_addr + ehdr->e_phoff;
 
-  const uintptr_t max_addr = UINTPTR_MAX;
+  const uintptr_t max_addr = uintptr_t(-1);
   uintptr_t min_vaddr = max_addr;
   uintptr_t dyn_vaddr = 0;
   size_t dyn_count = 0;
